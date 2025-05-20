@@ -9,12 +9,15 @@ public class StoreApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-		var orderService = context.getBean(OrderService.class);
 		//orderService.setPaymentService(new PaypalPaymentService());
+		var orderService = context.getBean(OrderService.class);
 		orderService.placeOrder();
 
 		NotificationManager notificationManager = context.getBean(NotificationManager.class);
 		notificationManager.sendNotification("using Spring Boot");
+
+		var resource = context.getBean(HeavyResource.class);
+
 	}
 
 }
