@@ -1,4 +1,4 @@
-package com.sri.store.notification;
+package com.sri.store;
 
 import org.springframework.stereotype.Service;
 
