@@ -11,7 +11,8 @@ public class SpringBootJpaApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext container = SpringApplication.run(SpringBootJpaApplication.class, args);
         DatabaseOperations dbOperations = container.getBean(DatabaseOperations.class);
-        dbOperations.addProductInformation();
+        //dbOperations.addProductInformation();
+        dbOperations.addUserInformation();
     }
 
 }
