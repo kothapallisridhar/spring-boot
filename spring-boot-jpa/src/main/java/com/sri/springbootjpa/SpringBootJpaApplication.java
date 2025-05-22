@@ -15,7 +15,8 @@ public class SpringBootJpaApplication {
         //dbOperations.addProductInformation();
         //dbOperations.addUserInformation();
         DatabaseOperationsTwo dbOperations2 = container.getBean(DatabaseOperationsTwo.class);
-        dbOperations2.addMoreProducts();
+        //dbOperations2.addMoreProducts();
+        dbOperations2.loadAllProducts();
 
     }
 
