@@ -1,6 +1,7 @@
 package com.sri.springbootjpa;
 
 import com.sri.springbootjpa.operations.DatabaseOperations;
+import com.sri.springbootjpa.operations.DatabaseOperationsTwo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,7 +13,10 @@ public class SpringBootJpaApplication {
         ConfigurableApplicationContext container = SpringApplication.run(SpringBootJpaApplication.class, args);
         DatabaseOperations dbOperations = container.getBean(DatabaseOperations.class);
         //dbOperations.addProductInformation();
-        dbOperations.addUserInformation();
+        //dbOperations.addUserInformation();
+        DatabaseOperationsTwo dbOperations2 = container.getBean(DatabaseOperationsTwo.class);
+        dbOperations2.addMoreProducts();
+
     }
 
 }
