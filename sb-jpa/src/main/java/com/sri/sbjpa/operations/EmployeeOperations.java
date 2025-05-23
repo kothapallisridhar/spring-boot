@@ -53,4 +53,28 @@ public class EmployeeOperations {
         employees.forEach(System.out::println);
     }
 
+    public void getEmployeesByGender(String gender) {
+        List<EmployeeDetails> employees = employeeRepository.findByGender(gender);
+        System.out.println("Employees by gender");
+        employees.forEach(System.out::println);
+    }
+
+    public void getEmployeesByGenderAndCountry(String gender, String country) {
+        List<EmployeeDetails> employees = employeeRepository.findByGenderAndCountry(gender, country);
+        System.out.println("Employees by gender and country");
+        employees.forEach(System.out::println);
+    }
+
+    public void getEmployeesByGenderAndCityAndCountry(String gender, String city, String country) {
+        List<EmployeeDetails> employees = employeeRepository.findByGenderAndCityAndCountry(gender, city, country);
+        System.out.println("Employees by gender, city and country");
+        employees.forEach(System.out::println);
+    }
+
+    public void getEmployeesByGenderOrCity(String gender, String city) {
+        List<EmployeeDetails> employees = employeeRepository.findByGenderOrCity(gender, city);
+        System.out.println("Employees by gender and city");
+        employees.forEach(System.out::println);
+    }
+
 }

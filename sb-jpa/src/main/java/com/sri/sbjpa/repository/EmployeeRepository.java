@@ -10,4 +10,8 @@ public interface EmployeeRepository extends JpaRepository<EmployeeDetails, Integ
     List<EmployeeDetails> findByCity(String citytName);
     List<EmployeeDetails> findByGender(String gender);
     List<EmployeeDetails> findByCountry(String country);
+    List<EmployeeDetails> findByGenderAndCountry(String gender, String country);
+    List<EmployeeDetails> findByGenderAndCityAndCountry(String gender, String city, String country);
+    List<EmployeeDetails> findByGenderOrCity(String gender, String city);
+
 }
