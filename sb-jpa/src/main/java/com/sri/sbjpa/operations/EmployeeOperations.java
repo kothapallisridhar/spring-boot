@@ -3,6 +3,7 @@ package com.sri.sbjpa.operations;
 import com.sri.sbjpa.entity.EmployeeDetails;
 import com.sri.sbjpa.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -75,6 +76,16 @@ public class EmployeeOperations {
         List<EmployeeDetails> employees = employeeRepository.findByGenderOrCity(gender, city);
         System.out.println("Employees by gender and city");
         employees.forEach(System.out::println);
+    }
+
+    public void loadAllEmployeesByEidAsc() {
+        List<EmployeeDetails> allEmployees = employeeRepository.findAll(Sort.by("empId"));
+        allEmployees.forEach(System.out::println);
+    }
+
+    public void loadAllEmployeesByEidDesc() {
+        List<EmployeeDetails> allEmployees = employeeRepository.findAll(Sort.by(Sort.Direction.DESC, "empId"));
+        allEmployees.forEach(System.out::println);
     }
 
 }
