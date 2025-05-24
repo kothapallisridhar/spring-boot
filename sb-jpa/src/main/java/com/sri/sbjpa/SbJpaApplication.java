@@ -24,7 +24,9 @@ public class SbJpaApplication {
 //        employeeOperations.getEmployeesByGenderOrCity("Female", "Bangalore");
         //employeeOperationsTwo.deleteEmployeeById(10);
         //employeeOperationsTwo.deleteByCountry("USA");
-        employeeOperationsTwo.updateEmployeeSalaryByEmployeeId(3, 600000);
+
+        //employeeOperationsTwo.updateEmployeeSalaryByEmployeeId(3, 600000);
+        employeeOperationsTwo.updateEmployeeSalaryByEmpId(5, 600000);
     }
 
 }
