@@ -13,7 +13,7 @@ public class SbJpaApplication {
         ConfigurableApplicationContext container = SpringApplication.run(SbJpaApplication.class, args);
         EmployeeOperations employeeOperations = container.getBean(EmployeeOperations.class);
         EmployeeOperationsTwo employeeOperationsTwo = container.getBean(EmployeeOperationsTwo.class);
-        //employeeOperations.addMoreEmployees();
+        employeeOperations.addMoreEmployees();
 //        employeeOperations.loadEmployeeInformationByEmpId(1);
 //        employeeOperations.loadEmployeeInformation();
 //        employeeOperations.getEmployeesByCity("Munich");
@@ -26,7 +26,7 @@ public class SbJpaApplication {
         //employeeOperationsTwo.deleteByCountry("USA");
 
         //employeeOperationsTwo.updateEmployeeSalaryByEmployeeId(3, 600000);
-        employeeOperationsTwo.updateEmployeeSalaryByEmpId(5, 600000);
+        //employeeOperationsTwo.updateEmployeeSalaryByEmpId(5, 600000);
     }
 
 }
