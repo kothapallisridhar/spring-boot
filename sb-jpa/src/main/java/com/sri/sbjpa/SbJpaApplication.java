@@ -14,15 +14,17 @@ public class SbJpaApplication {
         EmployeeOperations employeeOperations = container.getBean(EmployeeOperations.class);
         EmployeeOperationsTwo employeeOperationsTwo = container.getBean(EmployeeOperationsTwo.class);
         //employeeOperations.addMoreEmployees();
-        employeeOperations.loadEmployeeInformationByEmpId(1);
-        employeeOperations.loadEmployeeInformation();
-        employeeOperations.getEmployeesByCity("Munich");
-        employeeOperations.getEmployeesByCity("Bangalore");
-        employeeOperations.getEmployeesByGender("Male");
-        employeeOperations.getEmployeesByGenderAndCountry("Male", "Germany");
-        employeeOperations.getEmployeesByGenderAndCityAndCountry("Female", "Bangalore", "India");
-        employeeOperations.getEmployeesByGenderOrCity("Female", "Bangalore");
-        employeeOperationsTwo.deleteEmployeeById(10);
+//        employeeOperations.loadEmployeeInformationByEmpId(1);
+//        employeeOperations.loadEmployeeInformation();
+//        employeeOperations.getEmployeesByCity("Munich");
+//        employeeOperations.getEmployeesByCity("Bangalore");
+//        employeeOperations.getEmployeesByGender("Male");
+//        employeeOperations.getEmployeesByGenderAndCountry("Male", "Germany");
+//        employeeOperations.getEmployeesByGenderAndCityAndCountry("Female", "Bangalore", "India");
+//        employeeOperations.getEmployeesByGenderOrCity("Female", "Bangalore");
+        //employeeOperationsTwo.deleteEmployeeById(10);
+        //employeeOperationsTwo.deleteByCountry("USA");
+        employeeOperationsTwo.updateEmployeeSalaryByEmployeeId(3, 600000);
     }
 
 }

@@ -14,4 +14,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeDetails, Integ
     List<EmployeeDetails> findByGenderAndCityAndCountry(String gender, String city, String country);
     List<EmployeeDetails> findByGenderOrCity(String gender, String city);
 
+    int deleteByCountry(String country);
+
 }
