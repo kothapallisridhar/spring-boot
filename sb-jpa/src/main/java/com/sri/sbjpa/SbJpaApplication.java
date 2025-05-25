@@ -43,8 +43,11 @@ public class SbJpaApplication {
         employeeDetails.getEmpInformation();
         employeeDetails.getEmpDetails(1, 5); */
         EmployeeOperationsNativeSql employeeOperationsNativeSql = container.getBean(EmployeeOperationsNativeSql.class);
-        employeeOperationsNativeSql.loadEmployees();
-        employeeOperationsNativeSql.loadEmployeesByCity("Hyderabad");
+        //employeeOperationsNativeSql.loadEmployees();
+        //employeeOperationsNativeSql.loadEmployeesByCity("Hyderabad");
+        employeeOperationsNativeSql.loadEmployeesByCityAndAge("Bangalore", 30);
+        employeeOperationsNativeSql.addNewEmployee();
+        //employeeOperationsNativeSql.deleteEmployee(68);
     }
 
 }

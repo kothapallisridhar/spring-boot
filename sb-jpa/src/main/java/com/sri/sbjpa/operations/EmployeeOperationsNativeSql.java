@@ -25,4 +25,18 @@ public class EmployeeOperationsNativeSql {
         List<EmployeeDetails> employees = employeeRepository.getAllEmployeesByCity(city);
         employees.forEach(System.out::println);
     }
+
+    public void loadEmployeesByCityAndAge(String city, int age) {
+        List<EmployeeDetails> employees = employeeRepository.getAllEmployeesByCityAndAge(city, age);
+        employees.forEach(System.out::println);
+    }
+
+    public void addNewEmployee() {
+        int count = employeeRepository.addEmployee(100, "Klaus", 29, 500000, "Frankfurt", "Male", "Germany");
+        System.out.println("No of records inserted: " + count);
+    }
+
+    public void deleteEmployee(int empId) {
+        employeeRepository.deleteEmployee(empId);
+    }
 }
