@@ -24,7 +24,7 @@ public class EmployeeOperationsPagination {
     }
 
     public void getEmpDetails(int pageNo, int recordsPerPage) {
-        List<EmployeeDetails> employees = employeeRepository.findAll(PageRequest.of(pageNo, recordsPerPage, Sort.by("empId"))).getContent();
+        List<EmployeeDetails> employees = employeeRepository.findAll(PageRequest.of(pageNo, recordsPerPage, Sort.by(Sort.Direction.ASC, "empId"))).getContent();
         employees.forEach(System.out::println);
     }
 
