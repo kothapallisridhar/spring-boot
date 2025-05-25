@@ -2,6 +2,7 @@ package com.sri.sbjpa;
 
 import com.sri.sbjpa.operations.EmployeeOperations;
 import com.sri.sbjpa.operations.EmployeeOperationsTwo;
+import com.sri.sbjpa.operations.EmployeeOperationsPagination;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -28,12 +29,18 @@ public class SbJpaApplication {
         //employeeOperationsTwo.updateEmployeeSalaryByEmployeeId(3, 600000);
         //employeeOperationsTwo.updateEmployeeSalaryByEmpId(5, 600000);
 
-        System.out.println("All employees in order by empId");
-        employeeOperations.loadAllEmployeesByEidAsc();
+//        System.out.println("All employees in order by empId");
+//        employeeOperations.loadAllEmployeesByEidAsc();
+//
+//        System.out.println("All employees in descending order by empId");
+//        employeeOperations.loadAllEmployeesByEidDesc();
+//
+//        System.out.println("All employees in ascending order by city name");
+//        employeeOperations.loadAllEmployeesByCityNameAsc();
 
-        System.out.println("All employees in descending order by empId");
-        employeeOperations.loadAllEmployeesByEidDesc();
-
+        EmployeeOperationsPagination employeeDetails = container.getBean(EmployeeOperationsPagination.class);
+        //employeeDetails.getEmpInformation();
+        employeeDetails.getEmpDetails(1, 5);
     }
 
 }

@@ -88,4 +88,9 @@ public class EmployeeOperations {
         allEmployees.forEach(System.out::println);
     }
 
+    public void loadAllEmployeesByCityNameAsc() {
+        List<EmployeeDetails> allEmployees = employeeRepository.findAll(Sort.by("city"));
+        allEmployees.forEach(System.out::println);
+    }
+
 }
