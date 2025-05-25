@@ -20,4 +20,9 @@ public class EmployeeOperationsNativeSql {
         List<EmployeeDetails> employees = employeeRepository.getAllEmployees();
         employees.forEach(System.out::println);
     }
+
+    public void loadEmployeesByCity(String city) {
+        List<EmployeeDetails> employees = employeeRepository.getAllEmployeesByCity(city);
+        employees.forEach(System.out::println);
+    }
 }

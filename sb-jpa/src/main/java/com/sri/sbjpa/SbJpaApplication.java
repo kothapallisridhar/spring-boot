@@ -44,6 +44,7 @@ public class SbJpaApplication {
         employeeDetails.getEmpDetails(1, 5); */
         EmployeeOperationsNativeSql employeeOperationsNativeSql = container.getBean(EmployeeOperationsNativeSql.class);
         employeeOperationsNativeSql.loadEmployees();
+        employeeOperationsNativeSql.loadEmployeesByCity("Hyderabad");
     }
 
 }
