@@ -11,7 +11,10 @@ public class SbJpaGeneratedValuesApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext container = SpringApplication.run(SbJpaGeneratedValuesApplication.class, args);
         OrderManagementService orderMgmtService = container.getBean(OrderManagementService.class);
-        orderMgmtService.createOrder();
+        for (int i = 0; i < 10; i++) {
+            orderMgmtService.createOrder();
+        }
+
     }
 
 }
