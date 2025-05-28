@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 public class OrderInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long orderId;
+    private UUID orderId;
     private String emailId;
     private String name;
     private double price;
