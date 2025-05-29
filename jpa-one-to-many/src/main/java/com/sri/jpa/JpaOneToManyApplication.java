@@ -11,8 +11,8 @@ public class JpaOneToManyApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext container = SpringApplication.run(JpaOneToManyApplication.class, args);
         UserOperations userOps = container.getBean(UserOperations.class);
-        userOps.addUser();
-
+        //userOps.addUser();
+        userOps.getUserDetails();
     }
 
 }

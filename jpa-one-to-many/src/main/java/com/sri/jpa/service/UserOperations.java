@@ -28,4 +28,9 @@ public class UserOperations {
 
         userRepository.save(userDetails);
     }
+
+    public void getUserDetails() {
+        UserDetails userDetails = userRepository.findById(1122L).get();
+        System.out.println("User details: " + userDetails);
+    }
 }

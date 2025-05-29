@@ -20,7 +20,7 @@ public class UserDetails {
     // defining relationship
     // entity class of address table
     // 1 -> N
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id_addr_id")
     private List<Address> addresses;
 }
