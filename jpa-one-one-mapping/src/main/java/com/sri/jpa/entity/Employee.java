@@ -17,4 +17,9 @@ public class Employee {
     private long empId;
     private String name;
     private String gender;
+
+    // defining relationship
+    // entity class of Address table
+    @OneToOne(cascade=CascadeType.ALL)
+    Address address;
 }
