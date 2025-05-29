@@ -18,7 +18,7 @@ import java.util.UUID;
 public class OrderInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID orderId;
+    private long orderId;
     private String emailId;
     private String name;
     private double price;
