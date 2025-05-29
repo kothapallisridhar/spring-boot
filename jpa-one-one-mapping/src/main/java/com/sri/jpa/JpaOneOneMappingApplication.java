@@ -12,7 +12,7 @@ public class JpaOneOneMappingApplication {
         ConfigurableApplicationContext container = SpringApplication.run(JpaOneOneMappingApplication.class, args);
         EmpOperations empOperations = container.getBean(EmpOperations.class);
         empOperations.addEmployee();
-        empOperations.deleteEmployee(1101);
+        //empOperations.deleteEmployee(1101);
     }
 
 }

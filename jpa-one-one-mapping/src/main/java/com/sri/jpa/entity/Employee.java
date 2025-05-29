@@ -21,5 +21,6 @@ public class Employee {
     // defining relationship
     // entity class of Address table
     @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "eid_aid")
     Address address;
 }
