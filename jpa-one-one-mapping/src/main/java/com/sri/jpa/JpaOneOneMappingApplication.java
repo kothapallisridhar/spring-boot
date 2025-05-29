@@ -13,6 +13,7 @@ public class JpaOneOneMappingApplication {
         EmpOperations empOperations = container.getBean(EmpOperations.class);
         empOperations.addEmployee();
         //empOperations.deleteEmployee(1101);
+        empOperations.getEmployeeInfo(1000L);
     }
 
 }
