@@ -6,6 +6,8 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserManagementService {
 
@@ -18,13 +20,19 @@ public class UserManagementService {
         // already email existed or not
         // if existed, user already existed, no save operation
         // if not existed, then save operation
-        UserDetails userDetails = new UserDetails();
-        userDetails.setEmailId(email);
-        userDetails.setPassword(password);
-        userDetails.setFullName(name);
 
-        userManagementRepository.save(userDetails);
-        return "User Created Successfully";
+        Optional<UserDetails> user = userManagementRepository.findById(email);
+        if(user.isPresent()) {
+            return "User already existed, please try with new email";
+        } else {
+            UserDetails userDetails = new UserDetails();
+            userDetails.setEmailId(email);
+            userDetails.setPassword(password);
+            userDetails.setFullName(name);
+            userManagementRepository.save(userDetails);
+
+            return "User created successfully";
+        }
     }
 
 }

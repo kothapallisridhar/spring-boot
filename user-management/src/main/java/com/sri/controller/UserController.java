@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
@@ -21,15 +22,18 @@ public class UserController {
 
     // for signup request mapping
     @RequestMapping(method = RequestMethod.POST, path="/account/signup")
-    public String userSignup(HttpServletRequest request) {
+    public ModelAndView userSignup(HttpServletRequest request) {
         String name = request.getParameter("fullName");
         String email = request.getParameter("email");
         String password = request.getParameter("psw");
         System.out.println("Received details for signup: " + name + ", " + email + ", " + password)   ;
 
         // service layer
-        userManagementService.userSignUp(name, email, password);
-        return "message";
+        String result = userManagementService.userSignUp(name, email, password);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("message"); // JSP file name
+        mv.addObject("response", result); // value for JSP element
+        return mv;
     }
 
 

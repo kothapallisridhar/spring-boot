@@ -3,6 +3,6 @@
     <title>User Signup</title>
 </head>
 <body>
-    <h2>User created successfully!</h2>
+    <h2>${response}</h2>
 </body>
 </html>
