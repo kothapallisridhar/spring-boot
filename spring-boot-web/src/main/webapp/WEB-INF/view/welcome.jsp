@@ -1,2 +1,2 @@
 
-<h1>Welcome to Spring Boot Web moudle training</h1>
+<h1>Welcome to Spring Boot Web module training</h1>
