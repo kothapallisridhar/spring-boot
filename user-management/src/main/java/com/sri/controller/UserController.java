@@ -36,5 +36,24 @@ public class UserController {
         return mv;
     }
 
+    @RequestMapping(path = "/signin", method = RequestMethod.GET)
+    public ModelAndView userLoginForm() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("user_login");
+        return modelAndView;
+    }
+
+    @RequestMapping(path = "account/signin", method = RequestMethod.POST)
+    public ModelAndView userLogin(HttpServletRequest request) {
+        String emmail = request.getParameter("email");
+        String password = request.getParameter("psw");
+        // pass information to service
+        String result = userManagementService.userLogin(emmail, password);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("message");
+        mv.addObject("response", result);
+        return mv;
+    }
+
 
 }

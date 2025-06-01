@@ -34,5 +34,14 @@ public class UserManagementService {
             return "User created successfully";
         }
     }
+    // verify user credentials with repository
+    public String userLogin(String email, String psw) {
+        UserDetails userDetails = userManagementRepository.findByEmailIdAndPassword(email, psw);
+        if(userDetails != null) {
+            return "Welcome to Instagram, " + userDetails.getFullName();
+        } else {
+            return "Invalid Credentials, Please try again.";
+        }
+    }
 
 }
