@@ -19,4 +19,5 @@ public class UserController {
     public String deleteUser() {
         return "User deleted successfully";
     }
+
 }
