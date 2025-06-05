@@ -14,4 +14,11 @@ public class HomeController {
     public String sendWelcomeMessage() {
         return "Welcome to REST services by SRK services";
     }
+
+    // REST end point
+    @ResponseBody
+    @RequestMapping(path = "/hello", method = RequestMethod.GET)
+    public String sendHello() {
+        return "Hello";
+    }
 }
