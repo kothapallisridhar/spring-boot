@@ -12,8 +12,11 @@ public class UserController {
 
     @RequestMapping(path = "/add/user", method = RequestMethod.GET)
     public String addUser() {
-
         return "User added successfully";
+    }
 
+    @RequestMapping(path = "/delete/user", method = RequestMethod.GET)
+    public String deleteUser() {
+        return "User deleted successfully";
     }
 }
