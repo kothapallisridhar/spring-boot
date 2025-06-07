@@ -27,7 +27,7 @@ public class OrganizationController {
     }
     // shorthand way of using @RequestMapping
     //@RequestMapping(path = "/address", method = RequestMethod.GET)
-    @GetMapping("/phonenumber")
+    @GetMapping(path = {"/phone", "/mobile"})
     public String getPhoneNumber() {
         return "9900886699";
     }
