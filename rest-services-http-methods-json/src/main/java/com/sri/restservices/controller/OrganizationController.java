@@ -1,5 +1,6 @@
 package com.sri.restservices.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,4 +24,18 @@ public class OrganizationController {
     public String getAddress() {
         return "Munich, Germany";
     }
+    // shorthand way of using @RequestMapping
+    //@RequestMapping(path = "/address", method = RequestMethod.GET)
+    @GetMapping("/address2")
+    public String getAddress2() {
+        return "Frankfurt, Germany";
+    }
+
+    // similarly
+    // GET : @GetMapping
+    // POST : @PostMapping
+    // PUT : @PutMapping
+    // DELETE : @DeleteMapping
+
+
 }
