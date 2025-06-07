@@ -18,4 +18,9 @@ public class OrganizationController {
     public String getContactDetails() {
         return "email: srk@gmail.com";
     }
+    // you can ignore path or value property name in case of only path is defined
+    @RequestMapping("/address")
+    public String getAddress() {
+        return "Munich, Germany";
+    }
 }
