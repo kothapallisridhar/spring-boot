@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/contact")
 public class OrganizationController {
     // REST Service
     // an end point shold allow all HTTP methods if they don't define HTTP method in request mapping
@@ -15,7 +16,7 @@ public class OrganizationController {
         return "SRK IT";
     }
 
-    @RequestMapping(path = "/contact", method = {RequestMethod.GET, RequestMethod.PUT})
+    @RequestMapping(path = "/email", method = {RequestMethod.GET, RequestMethod.PUT})
     public String getContactDetails() {
         return "email: srk@gmail.com";
     }
@@ -26,9 +27,9 @@ public class OrganizationController {
     }
     // shorthand way of using @RequestMapping
     //@RequestMapping(path = "/address", method = RequestMethod.GET)
-    @GetMapping("/address2")
-    public String getAddress2() {
-        return "Frankfurt, Germany";
+    @GetMapping("/phonenumber")
+    public String getPhoneNumber() {
+        return "9900886699";
     }
 
     // similarly
