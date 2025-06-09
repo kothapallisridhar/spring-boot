@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserAccountsController {
 
+
     // HTTP method: Create: POST
     @PostMapping(path = "/signup")
     public String userSignup() {
         return null;
     }
-
 }
