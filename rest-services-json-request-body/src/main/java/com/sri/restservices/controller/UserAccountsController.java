@@ -13,5 +13,4 @@ public class UserAccountsController {
     public String userSignup() {
         return null;
     }
-
 }
