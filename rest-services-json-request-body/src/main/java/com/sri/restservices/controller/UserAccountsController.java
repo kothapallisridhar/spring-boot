@@ -24,12 +24,12 @@ public class UserAccountsController {
         return "User Signup Success";
     }
 
-    // 2nd rest service : JSON -> Java
+    // 2nd rest service : Create: POST
     @PostMapping("/address")
     public String addAddress(@RequestBody AddressRequest addressRequest) {
 
         // service
-
+        System.out.println("User address request: " + addressRequest);
         return "Address added successfully";
     }
 }
