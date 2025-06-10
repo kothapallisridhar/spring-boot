@@ -1,5 +1,6 @@
 package com.sri.restservices.controller;
 
+import com.sri.restservices.request.AddressRequest;
 import com.sri.restservices.request.UserSignupRequest;
 import com.sri.restservices.service.UserAccountsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,14 @@ public class UserAccountsController {
         System.out.println("User signup request: " + userSignupRequest);
         String result = userAccountsService.userSignUp(userSignupRequest);
         return "User Signup Success";
+    }
+
+    // 2nd rest service : JSON -> Java
+    @PostMapping("/address")
+    public String addAddress(@RequestBody AddressRequest addressRequest) {
+
+        // service
+
+        return "Address added successfully";
     }
 }
