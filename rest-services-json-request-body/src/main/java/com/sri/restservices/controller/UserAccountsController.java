@@ -32,7 +32,8 @@ public class UserAccountsController {
         return "Address added successfully";
     }
 
-    @GetMapping("/get/address")
+    @GetMapping(path = "/get/address", produces = MediaType.APPLICATION_JSON_VALUE)
+    //@ResponseBody
     public Address getAddress() {
 
         Address address = new Address();
