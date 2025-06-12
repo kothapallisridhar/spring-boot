@@ -3,6 +3,7 @@ package com.sri.restservices.service;
 import com.sri.restservices.entity.UserDetails;
 import com.sri.restservices.repository.UserRepository;
 import com.sri.restservices.request.UserDetailsRequest;
+import com.sri.restservices.request.UserLoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,14 @@ public class UserService {
         }
 
         return "User already exists!";
+    }
+    public UserDetails userLogin(UserLoginRequest userLoginRequest) {
+        // make a call to DB
+        UserDetails userData = userRepository.findByEmailIdAndPassword(userLoginRequest.getEmailId(), userLoginRequest.getPassword());
+        if(userData != null) {
+            return userData;
+        } else {
+            return null;
+        }
     }
 }
