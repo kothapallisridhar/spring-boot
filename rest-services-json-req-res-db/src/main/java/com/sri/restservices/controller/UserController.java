@@ -3,6 +3,7 @@ package com.sri.restservices.controller;
 import com.sri.restservices.entity.UserDetails;
 import com.sri.restservices.request.UserDetailsRequest;
 import com.sri.restservices.request.UserLoginRequest;
+import com.sri.restservices.response.UserDetailsResponse;
 import com.sri.restservices.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -26,9 +27,9 @@ public class UserController {
     }
     // User Login: CRUD : Read : Select * from users where email and password : GET
     @PostMapping(path = "/user/login")
-    public UserDetails userLogin(@RequestBody UserLoginRequest userLoginRequest) {
+    public UserDetailsResponse userLogin(@RequestBody UserLoginRequest userLoginRequest) {
         System.out.println("userLoginRequest: " + userLoginRequest);
-        UserDetails response = userService.userLogin(userLoginRequest);
+        UserDetailsResponse response = userService.userLogin(userLoginRequest);
         return response;
     }
 
