@@ -33,6 +33,6 @@ public class UserService {
             return "User Created successfully";
         }
 
-        return "User already exists";
+        return "User already exists!";
     }
 }
