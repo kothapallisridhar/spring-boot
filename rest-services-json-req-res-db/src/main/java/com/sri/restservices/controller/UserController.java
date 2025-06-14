@@ -17,8 +17,8 @@ public class UserController {
     @Autowired
     public UserService userService;
 
-    @PostMapping(path = "/user/create", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PostMapping(path = "/user/create", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public String createUser(@RequestBody UserDetailsRequest userDeatilsRequest) {
 
         // pass this info to service layer
@@ -32,5 +32,4 @@ public class UserController {
         UserDetailsResponse response = userService.userLogin(userLoginRequest);
         return response;
     }
-
 }
