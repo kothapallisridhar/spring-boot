@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductController {
-
     @PostMapping("/add/product")
     public String addProduct() {
         return "Product added";
