@@ -1,4 +1,4 @@
-package com.sri.payementservice.dto;
+package com.sri.paymentservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.sri.payementservice.controller;
+package com.sri.paymentservice.controller;
 
-import com.sri.payementservice.dto.NetBankingInfo;
+import com.sri.paymentservice.dto.NetBankingInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
