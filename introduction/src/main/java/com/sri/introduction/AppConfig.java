@@ -10,6 +10,4 @@ public class AppConfig {
     Apple getApple() {
         return new Apple();
     }
-
-
 }
