@@ -4,12 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Scope;
 
 @SpringBootApplication
 public class IntroductionApplication implements CommandLineRunner {
 
     @Autowired
-    Apple obj;
+    Apple apple1;
+
+    @Autowired
+    Apple apple2;
 
     public static void main(String[] args) {
         SpringApplication.run(IntroductionApplication.class, args);
@@ -17,6 +21,10 @@ public class IntroductionApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        obj.eatApple();
+        apple1.eatApple();
+        apple2.eatApple();
+
+        System.out.println(apple1.hashCode());
+        System.out.println(apple2.hashCode());
     }
 }
