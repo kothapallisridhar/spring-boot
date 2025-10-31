@@ -1,6 +1,8 @@
 package com.sridhar.first;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -10,4 +12,10 @@ public class HelloController {
     public String hello() {
         return "Hello Universe!";
     }
+
+    @PostMapping("/hello")
+    public String helloPost(@RequestBody String name) {
+        return "Hello " + name + "!";
+    }
+
 }
