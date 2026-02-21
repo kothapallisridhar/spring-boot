@@ -15,6 +15,7 @@ public class LambdaExamples {
     }
 }
 
+@FunctionalInterface
 interface MathOperation {
     int operation(int a);
 }
