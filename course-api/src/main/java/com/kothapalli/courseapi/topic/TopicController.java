@@ -14,7 +14,7 @@ public class TopicController {
 
     @RequestMapping("/topics")
     public List<Topic> getAllTopics() {
-        return topicService.getTopics();
+        return topicService.getAllTopics();
     }
     @RequestMapping("/topics/{id}")
     public Topic getTopic(@PathVariable String id) {
