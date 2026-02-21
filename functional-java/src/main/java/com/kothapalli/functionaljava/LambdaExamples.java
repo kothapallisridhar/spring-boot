@@ -10,6 +10,8 @@ public class LambdaExamples {
         int result2 = newLambdaIncrement.operation(10);
         System.out.println("Result: " + result2);
 
+        newLambdaIncrement = increment;
+        System.out.println("Result: " + newLambdaIncrement.operation(20));
     }
 }
 
