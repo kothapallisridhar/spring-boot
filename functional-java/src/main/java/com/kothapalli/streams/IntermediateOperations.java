@@ -1,5 +1,6 @@
 package com.kothapalli.streams;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 public class IntermediateOperations {
@@ -31,8 +32,45 @@ public class IntermediateOperations {
         Stream<Integer> evenNumbers = Stream.of(2, 4, 6, 8, 10);
         Stream.concat(oddNumbers, evenNumbers).forEach(System.out::println);
 
+        Stream<Watch> watchStream = Stream.of(
+                new Watch("Rolex", 5500000),
+                new Watch("Patek Philippe", 16600000),
+                new Watch("Tissot", 100000),
+                new Watch("Omega", 1000000),
+                new Watch("Tag Heuer", 120000),
+                new Watch("Grand Seiko", 200000),
+                new Watch("Hublot", 8800000)
+        );
 
+        List<String> watchList = watchStream
+                .filter(w -> w.getPrice() > 200000)
+                .map(Watch::getName)
+                .toList();
+        System.out.println("Watches list: " + watchList);
+    }
+}
+class Watch {
+    String name;
+    Integer price;
 
+    public Watch(String name, Integer price) {
+        this.name = name;
+        this.price = price;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
