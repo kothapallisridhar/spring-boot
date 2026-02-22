@@ -15,6 +15,8 @@ public class ScopesProblem {
 
     public static void main(String[] args) {
         Function<Integer, Integer> counter = ScopesProblem.coutner();
-        System.out.println(counter.apply(10)); // it considers only the value in counter function
+        System.out.println(counter.apply(10));
+        // it considers only the value in counter function
+        // avoid using closures
     }
 }
