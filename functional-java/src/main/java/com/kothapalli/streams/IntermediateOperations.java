@@ -27,6 +27,9 @@ public class IntermediateOperations {
                 .sorted() // sort in ascending order
                 .forEach(System.out::println);
 
+        Stream<Integer> oddNumbers = Stream.of(1, 3, 5, 7, 9);
+        Stream<Integer> evenNumbers = Stream.of(2, 4, 6, 8, 10);
+        Stream.concat(oddNumbers, evenNumbers).forEach(System.out::println);
 
 
 
