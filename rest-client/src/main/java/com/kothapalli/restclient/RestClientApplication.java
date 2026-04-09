@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @SpringBootApplication
 public class RestClientApplication {
 
@@ -15,6 +17,9 @@ public class RestClientApplication {
 
         System.out.println("------------m2()-----------");
         m2();
+
+        System.out.println("------------m3()-----------");
+        m3();
 
     }
 
@@ -39,6 +44,15 @@ public class RestClientApplication {
             String body = forEntity.getBody();
             System.out.println(body);
         }
+    }
+
+    public static void m3() {
+        RestTemplate rt = new RestTemplate();
+        String apiUrl = "https://dummyjson.com/quotes";
+        ResponseEntity<QuotesResponseDto> forEntity = rt.getForEntity(apiUrl, QuotesResponseDto.class);
+        QuotesResponseDto body = forEntity.getBody();
+        List<Quote> quotes = body.getQuotes();
+        quotes.forEach(System.out::println);
     }
 
 }
